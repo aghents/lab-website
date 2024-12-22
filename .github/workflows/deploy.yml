@@ -2,7 +2,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
+  # Run workflow on push to main branch or manually
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -13,12 +16,14 @@ concurrency:
   group: 'deploy'
   cancel-in-progress: true
 
+env:
+  PUBLIC_URL: https://aghents.github.io/lab-website
+
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: GitHub Pages
-      url: ${{ secrets.PUBLIC_URL }}
+      url: ${{ env.PUBLIC_URL }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,7 +42,7 @@ jobs:
 
       - name: Build
         run: |
-          export PUBLIC_URL=${{ secrets.PUBLIC_URL }}
+          export PUBLIC_URL=${{ env.PUBLIC_URL }}
           yarn build
 
       - name: Deploy to GitHub Pages
