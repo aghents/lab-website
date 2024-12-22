@@ -1,9 +1,9 @@
 {
   "name": "homepage",
-  "description": "Homepage of CASTLE Research Group",
+  "description": "Homepage of Pattern Recognition Research Group",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://castle.cse.ust.hk",
+  "homepage": "aghents.github.io/lab-website",
   "type": "module",
   "packageManager": "yarn@3.6.1",
   "dependencies": {
