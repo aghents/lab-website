@@ -1,12 +1,12 @@
-# Simple workflow for deploying static content to server
-name: Deploy to server
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -17,8 +17,8 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     environment:
-      name: Server
-      url: ${{ vars.PUBLIC_URL }}
+      name: GitHub Pages
+      url: ${{ secrets.PUBLIC_URL }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v2
         with:
           node-version: 16.x
           cache: 'yarn'
@@ -37,19 +37,11 @@ jobs:
 
       - name: Build
         run: |
-          export PUBLIC_URL=${{ vars.PUBLIC_URL }}
+          export PUBLIC_URL=${{ secrets.PUBLIC_URL }}
           yarn build
 
-      - name: Change permission
-        run: |
-          chmod 755 -R build
-
-      - name: Deploy
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: '-rlgoDzvc -i --delete -p'
-          SOURCE: 'build/'
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
