@@ -1,4 +1,3 @@
-# This is a basic workflow to do the last time check before release, i.e., merge to main branch
 
 # Simple workflow for deploying static content to GitHub Pages
 name: Build React Webpage
@@ -31,5 +30,7 @@ jobs:
         run: yarn
 
       - name: Build
+        env:
+          PUBLIC_URL: https://aghents.github.io/lab-website
         run: |
           yarn build
