@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "https://aghents.github.io/lab-website/static/js/main.f9f9d76d.js",
+    "main.js": "https://aghents.github.io/lab-website/static/js/main.835f7a97.js",
     "static/js/111.814ad469.chunk.js": "https://aghents.github.io/lab-website/static/js/111.814ad469.chunk.js",
     "index.html": "https://aghents.github.io/lab-website/index.html",
-    "main.f9f9d76d.js.map": "https://aghents.github.io/lab-website/static/js/main.f9f9d76d.js.map",
+    "main.835f7a97.js.map": "https://aghents.github.io/lab-website/static/js/main.835f7a97.js.map",
     "111.814ad469.chunk.js.map": "https://aghents.github.io/lab-website/static/js/111.814ad469.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.f9f9d76d.js"
+    "static/js/main.835f7a97.js"
   ]
 }
