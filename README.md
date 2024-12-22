@@ -1,4 +1,4 @@
-# Homepage of CASTLE Research Group
+# Homepage of Pattern Recognition Research Group
 
 ## Development
 
@@ -27,6 +27,6 @@ Admin will merge the PR if everything looks good.
 
 ## Deployment
 
-Any push to `main` branch will trigger a `preview` GitHub Action to deploy to GitHub Page: https://castlelab.github.io.
+Any push to `main` branch will trigger a `preview` GitHub Action to deploy to GitHub Page.
 
-Deployment to server can only be triggered manually via GitHub Action [`deploy`](https://github.com/CastleLab/CastleLab.github.io/actions/workflows/deploy.yml).
+Deployment to server can only be triggered manually via GitHub Action [`deploy`]
