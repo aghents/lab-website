@@ -3,7 +3,7 @@
   "description": "Homepage of Pattern Recognition Research Group",
   "version": "0.1.0",
   "private": true,
-  "homepage": "aghents.github.io/lab-website",
+  "homepage": "https://aghents.github.io/lab-website",
   "type": "module",
   "packageManager": "yarn@3.6.1",
   "dependencies": {
