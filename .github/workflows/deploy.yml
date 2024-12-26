@@ -38,7 +38,7 @@ jobs:
 
       - name: Build
         run: |
-          export PUBLIC_URL= ${{ vars.PUBLIC_URL }}
+          export PUBLIC_URL=https://aghents.github.io/lab-website
           yarn build
 
       - name: Deploy to GitHub Pages
