@@ -36,7 +36,8 @@ jobs:
         run: npx update-browserslist-db@latest
 
       - name: Build
-        run: PUBLIC_URL=https://aghents.github.io/lab-website yarn build
+        run: |
+          PUBLIC_URL=https://aghents.github.io/lab-website yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
