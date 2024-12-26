@@ -18,7 +18,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ vars.PUBLIC_URL }}
+      url: https://aghents.github.io/lab-website
       
     runs-on: ubuntu-latest
     steps:
